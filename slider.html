@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <title>3 Column Layout</title>
+   <link rel="stylesheet" href="assets/css/style.css">
+   <script src="assets/js/script.js"></script>
+   <script>
+   window.onload = function() {
+       let slides = [
+           {
+               title: "Youtube",
+               background: "assets/img/youtube.jpg",
+               link: "https://www.youtube.com"
+           }, {
+               title: "Reddit",
+               background: "assets/img/reddit.jpg",
+               link: "https://www.reddit.com"
+           }, {
+               title: "Wikipedia",
+               background: "assets/img/wikipedia.jpg",
+               link: "https://en.wikipedia.org/wiki/Main_Page"
+           }
+       ]
+       Slider.initSlider(slides);
+    };
+    </script>
+</head>
+<body>
+<header class="header"><p>Header...</p></header>
+<div class="container">
+   <main class="center column">
+       <article>
+           <h1>Slider</h1>
+           <a href="#" class="button1" id="toggler" onClick="show()">Hide Slider</a>
+           <script>
+                var hidden = false;
+                function show() {
+                    hidden = !hidden;
+                    if(hidden) {
+                        document.getElementById("toggler").innerHTML = "Show Slider";
+                        document.getElementById('slider').style.visibility = 'hidden';
+                        document.getElementById('prevButton').style.visibility = 'hidden';
+                        document.getElementById('nextButton').style.visibility = 'hidden';
+                    } else {
+                        document.getElementById("toggler").innerHTML = "Hide Slider";
+                        document.getElementById('slider').style.visibility = 'visible';
+                        document.getElementById('prevButton').style.visibility = 'visible';
+                        document.getElementById('nextButton').style.visibility = 'visible';
+                    }
+                }
+            </script>
+           <a href="#" class="button1" id="toggler" onClick="start()">Start</a>
+           <script>
+                function start() {
+                       if (event.target.classList.contains('start')){
+                           event.target.innerHTML = 'Start';
+                           clearInterval(interval)
+                       } else {
+                           event.target.innerHTML = 'Stop';
+                           interval = setInterval(()=>{
+                               Slider.nextSlide();
+                           },1000)
+                       }
+                       event.target.classList.toggle('start')
+                    }
+           </script>
+           <div id="slider"></div><br>
+           <a href="#" class="button" id="prevButton" onclick="Slider.prevSlide()">Prev</a>
+           <a href="#" class="button" id="nextButton" onclick="Slider.nextSlide()">Next</a>
+           <p></p>
+       </article>
+    </main>
+    <nav class="left column">
+       <h3>Left heading</h3>
+       <ul>
+           <li><a href="media.html">Media</a></li>
+       </ul>
+       <ul>
+           <li><a href="table.html">Table</a></li>
+       </ul>
+       <ul>
+           <li><a href="slider.html">Slider</a></li>
+       </ul>
+       <ul>
+           <li><a href="contact.html">Contact</a></li>
+       </ul>
+       <ul>
+           <li><a href="about.html">About</a></li>
+       </ul>
+    </nav>
+    <div class="right column">
+       <h3>Right heading</h3>
+       <p></p>
+    </div>
+    <div class="push"></div>
+</div>
+<div class="footer-wrapper">
+   <footer class="footer"><p>Footer...</p></footer>
+</div>
+</body>
+</html>

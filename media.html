@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <title>3 Column Layout</title>
+   <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<header class="header"><p>Header...</p></header>
+<div class="container">
+   <main class="center column">
+       <article>
+           <h1>Media</h1><br>
+           <p><big>Audio:</big></p>
+           <audio controls>
+                <source src="public/audio/sea_sound.mp3" type="audio/mp3">
+            </audio>
+            <p><big>Video:</big></p>
+            <video width="300" height="200" controls>
+               <source src="public/videos/sea.mp4" type="video/mp4">
+            </video><br>
+            <p><big>Youtube Video:</big></p>
+            <iframe src="https://www.youtube.com/embed/NM22Xh0SD6g" width="320" height="240" title="video"></iframe>
+       </article>
+   </main>
+   <nav class="left column">
+       <h3>Left heading</h3>
+       <ul>
+           <li><a href="media.html">Media</a></li>
+       </ul>
+       <ul>
+           <li><a href="table.html">Table</a></li>
+       </ul>
+       <ul>
+           <li><a href="slider.html">Slider</a></li>
+       </ul>
+       <ul>
+           <li><a href="contact.html">Contact</a></li>
+       </ul>
+       <ul>
+           <li><a href="about.html">About</a></li>
+       </ul>
+   </nav>
+   <div class="right column">
+       <h3>Right heading</h3>
+       <p></p>
+   </div>
+   <div class="push"></div>
+</div>
+<div class="footer-wrapper">
+   <footer class="footer"><p>Footer...</p></footer>
+</div>
+</body>
+</html>
