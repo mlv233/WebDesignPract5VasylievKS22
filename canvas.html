@@ -3,25 +3,27 @@
 <head>
    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
    <title>3 Column Layout</title>
+   <link rel="stylesheet" href="assets/css/canvas.css">
+   <script src="assets/js/canvas.js"></script>
+   <script>
+       window.onload = function() {
+           canvas('#draw', {
+               width: 500,
+               height: 300,
+               strokeWidth: 5,
+               strokeColor: "#df4b26"
+            })
+       };
+   </script>
    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 <header class="header"><p>Header...</p></header>
 <div class="container">
    <main class="center column">
-       <article>
-           <h1>Media</h1><br>
-           <p><big>Audio:</big></p>
-           <audio controls>
-                <source src="public/audio/sea_sound.mp3" type="audio/mp3">
-            </audio>
-            <p><big>Video:</big></p>
-            <video width="300" height="200" controls>
-               <source src="public/videos/sea.mp4" type="video/mp4">
-            </video><br>
-            <p><big>Youtube Video:</big></p>
-            <iframe src="https://www.youtube.com/embed/NM22Xh0SD6g" width="320" height="240" title="video"></iframe>
-       </article>
+       <canvas id="draw"></canvas>
+       <div class="toolbar" id="toolbar"></div><br><br>
+       <div class="toolbarbackground" id="toolbarbackground"></div>
    </main>
    <nav class="left column">
        <h3>Left heading</h3>
